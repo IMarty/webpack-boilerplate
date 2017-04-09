@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "eslint src/js/*.js webpack.config.js",
     "dev": "npm run lint && webpack-dev-server",
-    "prod": "npm run clean && webpack -p",
-    "clean": "rimraf ./dist/images/* && rimraf ./dist/index.html && rimraf ./dist/style.css && rimraf ./dist/*.bundle.js"
+    "prod": "npm run clean && webpack -p && npm run deploy",
+    "clean": "rimraf ./dist/images/* && rimraf ./dist/index.html && rimraf ./dist/style.css && rimraf ./dist/*.bundle.js",
+    "deploy":"cd dist && surge"
   },
   "author": "Petr Tichy",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "rimraf": "^2.6.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "surge": "^0.19.0",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }
